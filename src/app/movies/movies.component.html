@@ -1,0 +1,23 @@
+<div class="container content-wrapper">
+  @for (movie of movies; track $index) {
+  <div class="card">
+    <img
+      src="{{ imageUrl(movie.poster).width(200).url() }}"
+      alt="{{ movie.title }}"
+    />
+    <div class="card-body">
+      <h5 class="card-title">
+        {{ movie.title }}
+      </h5>
+      @for (view of movie.overview; track $index) {
+      <p class="card-text">
+        {{ view["children"][0]["text"] }}
+      </p>
+      }
+      <div>
+        {{ movie.releaseDate | date }}
+      </div>
+    </div>
+  </div>
+  }
+</div>

@@ -1,0 +1,12 @@
+<div class="container content-wrapper">
+  @for (actor of actors; track $index) {
+  <div class="card">
+    <img src="{{ imageUrl(actor.image) }}" alt="{{ actor.name }}" />
+    <div class="card-body">
+      <h5 class="card-title">
+        {{ actor.name }}
+      </h5>
+    </div>
+  </div>
+  }
+</div>
